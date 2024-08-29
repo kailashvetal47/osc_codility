@@ -7,7 +7,8 @@ class Solution
 
     public int solution(int[] A)
     {
-        return 0;
+        // This will make all tests fail
+        return 1;
     }
 
 }
