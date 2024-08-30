@@ -1,5 +1,8 @@
-using System;
 namespace code_challenges.Task01;
+
+
+using System;
+
 
 // given program is made for redablity and maintainability.
 class Solution
