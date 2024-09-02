@@ -14,23 +14,7 @@ public class Point2D
         this.x = x;
         this.y = y;
     }
-
-    public override bool Equals(object obj)
-    {
-        if (obj == null || GetType() != obj.GetType())
-        {
-            return false;
-        }
-
-        Point2D other = (Point2D)obj;
-        return (x == other.x) && (y == other.y);
-    }
-
-    public override int GetHashCode()
-    {
-        return HashCode.Combine(x, y);
-    }
-};
+}
 
 public class Solution
 {
@@ -43,7 +27,7 @@ public class Solution
 
         foreach (Point2D point1 in points)
         {
-            if (point1.Equals(origin))
+            if (point1.x == 0 && point1.y == 0)
             {
                 continue;
             }
