@@ -26,9 +26,10 @@ public class SolutionTests
         {
             get
             {
-                yield return new TestCaseData([new Point2D(1,1), new Point2D(2,2), new Point2D(3,3)] ).Returns(0).TestName = "1";
-                yield return new TestCaseData([new Point2D(0,0)] ).Returns(0).TestName = "2";
-                 yield return new TestCaseData([new Point2D(1,1), new Point2D(2,2), new Point2D(3,3), new Point2D(4,4), new Point2D(5,5)] ).Returns(0).TestName = "3";
+                yield return new TestCaseData([new Point2D(1,1), new Point2D(2,2), new Point2D(3,3)] ){ ExpectedResult = 0, TestName = "1"} ;
+                yield return new TestCaseData([new Point2D(0,0)] ){ ExpectedResult = 0, TestName = "2"} ;
+                yield return new TestCaseData([new Point2D(1,1), new Point2D(2,2), new Point2D(3,3), new Point2D(4,4), new Point2D(5,5)] )
+                 { ExpectedResult = 0, TestName = "3"} ;
             }
         }
     }
