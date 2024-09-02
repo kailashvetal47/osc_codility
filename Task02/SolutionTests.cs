@@ -40,4 +40,26 @@ public class SolutionTests
     
     }
 
+    [Test(Description = "GivenSimpleLineTriangle_ExpectResultAsEmptyArray")]
+    public void GivenSimpleTriangleWithPointInside_ExpectResultAsEmptyArray()
+    {
+        var expected = new int []{2,1,0};
+        var X = new int []{2, 1, 0, 2};
+        var Y = new int []{0, 1, 0, 2};
+        int[] result = _task.solution(X, Y);
+        Assert.That(result, Is.EqualTo(expected));
+    
+    }
+
+     [Test(Description = "GivenSampleTestData_ExpectResultTestSolution")]
+    public void GivenSampleTestData_ExpectResultTestSolution()
+    {
+        var expected = new int []{0,1,4};
+        var X = new int []{0,1,2,4,4,5,6};
+        var Y = new int []{0, 1, 2,3,4,5,6};
+        int[] result = _task.solution(X, Y);
+        Assert.That(result, Is.EqualTo(expected));
+    
+    }
+
 }

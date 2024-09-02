@@ -79,6 +79,7 @@ public class Solution
 
                     if(success == true )
                     {
+                        PrintPoint2DArray(new Point2D[]{p1,p2,p3});
                         return result;
                     }
                 }
