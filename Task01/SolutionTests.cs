@@ -61,4 +61,47 @@ public class SolutionTests
         return result;
     }
 
+    // AI-Generated Tests
+
+    [Test(ExpectedResult = 1, Description = "GivenSingleNonOriginPoint_ExpectResultOne")]
+    public int GivenSingleNonOriginPoint_ExpectResultOne()
+    {
+        Point2D[] input = [new Point2D(5, 10)];
+        int result = _task.solution(input);
+        return result;
+    }
+
+    [Test(ExpectedResult = 2, Description = "GivenTwoPointsWithSameXDifferentY_ExpectResultTwo")]
+    public int GivenTwoPointsWithSameXDifferentY_ExpectResultTwo()
+    {
+        Point2D[] input = [new Point2D(2, 3), new Point2D(2, -5)];
+        int result = _task.solution(input);
+        return result;
+    }
+
+    [Test(ExpectedResult = 2, Description = "GivenTwoPointsWithSameYDifferentX_ExpectResultTwo")]
+    public int GivenTwoPointsWithSameYDifferentX_ExpectResultTwo()
+    {
+        Point2D[] input = [new Point2D(-4, 7), new Point2D(8, 7)];
+        int result = _task.solution(input);
+        return result;
+    }
+
+    [Test(ExpectedResult = 1, Description = "GivenDuplicatePoints_ExpectResultOne")]
+    public int GivenDuplicatePoints_ExpectResultOne()
+    {
+        Point2D[] input = [new Point2D(1, 2), new Point2D(1, 2), new Point2D(1, 2)];
+        int result = _task.solution(input);
+        return result;
+    }
+
+    [Test(ExpectedResult = 2, Description = "GivenMixOfLinearAndNonLinearPoints_ExpectResultTwo")]
+    public int GivenMixOfLinearAndNonLinearPoints_ExpectResultTwo()
+    {
+        Point2D[] input = [new Point2D(1, 1), new Point2D(2, 2), new Point2D(3, 3), new Point2D(1, 2)];
+        int result = _task.solution(input);
+        return result;
+    }
+
+
 }
