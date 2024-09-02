@@ -44,8 +44,9 @@ public class Solution {
           processedPoints.Add(p);
           foreach( Point2D q in  A )
           {
-             if(!processedPoints.Contains(p) && !p.Equals(ORIGIN))
+             if(!processedPoints.Contains(q) )
              {
+              Console.WriteLine("Processing Line P ( " + p.x + " , " + p.y + ")" + " to Q (" + q.x + " , " + q.y + ")");
                 if(IsPointOnLine(ORIGIN,p,q))
                 {
                   processedPoints.Add(q);

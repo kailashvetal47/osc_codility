@@ -36,15 +36,15 @@ public class SolutionTests
     }
 
 
-    [Test(ExpectedResult = 0, Description = "GivenOrigin Test")]
-    public int GivenOriginAsInput_TestShouldReturnZero ()
+    [Test(ExpectedResult = 0, Description = "GivenOriginAsInput_ExpectResultZero")]
+    public int GivenOriginAsInput_ExpectResultZero ()
     {
         Point2D[] input = {new Point2D(0,0)};
         int result = _task.solution(input);
         return result;
     }
 
-    [Test(ExpectedResult = 3, Description = "Three non linear points")]
+    [Test(ExpectedResult = 3, Description = "01-GivenThreeNonLinearPoints_ExpectResultThree")]
     public int GivenThreeNonLinearPoints_ExpectResultThree ()
     {
         Point2D[] input = [new Point2D(0,1), new Point2D(1,0), new Point2D(1,1)];
@@ -52,7 +52,7 @@ public class SolutionTests
         return result;
     }
 
-    [Test(ExpectedResult = 1, Description = "Three linear points")]
+    [Test(ExpectedResult = 1, Description = "GivenThreeLinearPoints_ExpectResultOne")]
     public int GivenThreeLinearPoints_ExpectResultOne ()
     {
         Point2D[] input = [new Point2D(1,1), new Point2D(2,2), new Point2D(3,3)];
