@@ -44,6 +44,8 @@ public class Solution {
           processedPoints.Add(p);
           foreach( Point2D q in  A )
           {
+            //hint: All origin(0,0) will be added in the processedPoints automatically as
+            //      they form line with any point and origin.
              if(!processedPoints.Contains(q) )
              {
               Console.WriteLine("Processing Line P ( " + p.x + " , " + p.y + ")" + " to Q (" + q.x + " , " + q.y + ")");

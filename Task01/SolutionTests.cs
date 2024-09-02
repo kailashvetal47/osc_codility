@@ -60,4 +60,12 @@ public class SolutionTests
         return result;
     }
 
+    [Test(ExpectedResult = 3, Description = "GivenThreeLinearPoints_ExpectResultOne")]
+    public int GivenOriginAsSecondPointFourNonLinearPoints_ExpectResultThree ()
+    {
+        Point2D[] input = [new Point2D(0,1), new Point2D(0,0),  new Point2D(1,0), new Point2D(1,1)];
+        int result = _task.solution(input);
+        return result;
+    }
+
 }
