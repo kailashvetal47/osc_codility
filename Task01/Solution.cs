@@ -14,6 +14,22 @@ public class Point2D {
     this.x = x;
     this.y = y;
   }
+
+   public override bool Equals(object obj)
+    {
+        if (obj == null || GetType() != obj.GetType())
+        {
+            return false;
+        }
+
+        Point2D other = (Point2D)obj;
+        return (x == other.x) && (y == other.y);
+    }
+
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(x, y); 
+    }
 };
 
 public class Solution {
@@ -29,13 +45,11 @@ public class Solution {
       foreach( Point2D p in  A )
       {
         Console.WriteLine("Point : " + p.x + " , " + p.y);
-
-        if( p.x == 0 && p.y == 0 )
+        if(p.Equals(ORIGIN))
         {
           continue;
         }
 
-        
         if(!processedPoints.Contains(p))
         {
           Console.WriteLine("Processing Line Origin to P " + p.x + " , " + p.y);
