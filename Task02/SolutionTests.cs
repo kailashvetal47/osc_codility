@@ -15,15 +15,18 @@ public class SolutionTests
         _task = new Solution();
     }
 
-    [TestCase(new int[] { 1, 2, 3, 4, 5 }, ExpectedResult = 0, TestName = "SimpleTest")]
-    [TestCase(new int[] { }, ExpectedResult = 0, TestName = "EmptyArray")]
-    [TestCase(new int[] { 42 }, ExpectedResult = 0, TestName = "SingleElementArray")]
+    
+    // return indices of the points
 
-
-    public int GivenValidInput_ShouldGiveExpectedResult(int[] input)
+    [Test(Description = "GivenSimpleTriangle_ExpectResultIndicesOfPoints")]
+    public void GivenSimpleTriangle_ExpectResultIndicesOfPoints()
     {
-        //int result = _task.solution(input);
-        return 0;
+        var expected = new int []{};
+        var X = new int []{0, 1, 2};
+        var Y = new int []{0, 1, 0};
+        int[] result = _task.solution(X, Y);
+        Assert.That(result, Is.EqualTo(expected));
+    
     }
 
 }
