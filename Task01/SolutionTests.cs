@@ -20,21 +20,6 @@ public class SolutionTests
         _task = new Solution();
     }
 
-    public class SolutionTestData
-    {
-        public static IEnumerable TestCases
-        {
-            get
-            {
-                yield return new TestCaseData([new Point2D(1,1), new Point2D(2,2), new Point2D(3,3)] ){ ExpectedResult = 1, TestName = "Points on same line"} ;
-                yield return new TestCaseData([new Point2D(0,1), new Point2D(1,0), new Point2D(1,1)] ){ ExpectedResult = 3, TestName = "Three different points"} ;
-                yield return new TestCaseData(new Point2D[] {new Point2D(0,0)} ){ ExpectedResult = 0, TestName = "Origins to origin ray"} ;
-                yield return new TestCaseData([new Point2D(1,1), new Point2D(2,2), new Point2D(3,3), new Point2D(4,4), new Point2D(5,5)] )
-                 { ExpectedResult = 1, TestName = "Points on same line"} ;
-            }
-        }
-    }
-
 
     [Test(ExpectedResult = 0, Description = "GivenOriginAsInput_ExpectResultZero")]
     public int GivenOriginAsInput_ExpectResultZero ()
@@ -64,6 +49,14 @@ public class SolutionTests
     public int GivenOriginAsSecondPointFourNonLinearPoints_ExpectResultThree ()
     {
         Point2D[] input = [new Point2D(0,1), new Point2D(0,0),  new Point2D(1,0), new Point2D(1,1)];
+        int result = _task.solution(input);
+        return result;
+    }
+
+     [Test(ExpectedResult = 3, Description = "GivenThreeLinearPoints_ExpectResultOne")]
+    public int GivenBoundryConditionPoints_InThreeNonLinearPoints_ExpectResultThree ()
+    {
+        Point2D[] input = [new Point2D(1000000,1), new Point2D(0,0),  new Point2D(1,0), new Point2D(1,1)];
         int result = _task.solution(input);
         return result;
     }
