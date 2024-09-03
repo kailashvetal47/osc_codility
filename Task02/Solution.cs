@@ -19,7 +19,7 @@ public class Point2D
 
 public class Solution 
 {
-    Point2D[] points;
+    Point2D[] points = new Point2D[]{};
     public int[] solution(int[] X, int[] Y) 
     {
         points = SortAndStorePoints2D(X, Y);
