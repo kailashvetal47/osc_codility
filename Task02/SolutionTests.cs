@@ -51,15 +51,29 @@ public class SolutionTests
     
     }
 
-     [Test(Description = "GivenSampleTestData_ExpectResultTestSolution")]
-    public void GivenSampleTestData_ExpectResultTestSolution()
+    [Test(Description = "GivenSampleTestData01_ExpectResultTestSolution")]
+    public void GivenSampleTestData01_ExpectResultTestSolution()
     {
         var expected = new int []{0,1,4};
-        var X = new int []{0,1,2,4,4,5,6};
-        var Y = new int []{0, 1, 2,3,4,5,6};
+        var X = new int []{0,1,4,3,2,3};
+        var Y = new int []{0,4,3,1,1,2};
         int[] result = _task.solution(X, Y);
         Assert.That(result, Is.EqualTo(expected));
     
     }
+
+    
+    [Test(Description = "GivenSampleTestData02_ExpectResultTestSolution")]
+    public void GivenSampleTestData02_ExpectResultTestSolution()
+    {
+        var expected = new int []{0,1,3};
+        var X = new int []{0,1,2,4,4,5,6};
+        var Y = new int []{0,1,2,3,4,5,6};
+        int[] result = _task.solution(X, Y);
+        Assert.That(result, Is.EqualTo(expected));
+    
+    }
+
+    
 
 }
