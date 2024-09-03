@@ -48,10 +48,14 @@ public class Solution
         }
 
         return distinctLines;
+        return distinctLines;
     }
 
     private bool IsPointOnLine(Point2D point1, Point2D point2, Point2D point3)
+    private bool IsPointOnLine(Point2D point1, Point2D point2, Point2D point3)
     {
+        var area = (point2.x - point1.x) * (point3.y - point1.y) - (point3.x - point1.x) * (point2.y - point1.y);
+        return Math.Abs(area) <= 1e-6;
         var area = (point2.x - point1.x) * (point3.y - point1.y) - (point3.x - point1.x) * (point2.y - point1.y);
         return Math.Abs(area) <= 1e-6;
     }
