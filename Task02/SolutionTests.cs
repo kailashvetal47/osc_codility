@@ -15,15 +15,65 @@ public class SolutionTests
         _task = new Solution();
     }
 
-    [TestCase(new int[] { 1, 2, 3, 4, 5 }, ExpectedResult = 0, TestName = "SimpleTest")]
-    [TestCase(new int[] { }, ExpectedResult = 0, TestName = "EmptyArray")]
-    [TestCase(new int[] { 42 }, ExpectedResult = 0, TestName = "SingleElementArray")]
+    
+    // return indices of the points
 
-
-    public int GivenValidInput_ShouldGiveExpectedResult(int[] input)
+    [Test(Description = "GivenSimpleTriangle_ExpectResultIndicesOfPoints")]
+    public void GivenSimpleTriangle_ExpectResultIndicesOfPoints()
     {
-        //int result = _task.solution(input);
-        return 0;
+        var expected = new int []{2,1,0};
+        var X = new int []{2, 1, 0};
+        var Y = new int []{0, 1, 0};
+        int[] result = _task.solution(X, Y);
+        Assert.That(result, Is.EqualTo(expected));
+    
     }
+
+     [Test(Description = "GivenSimpleLineTriangle_ExpectResultAsEmptyArray")]
+    public void GivenSimpleLineTriangle_ExpectResultAsEmptyArray()
+    {
+        var expected = new int []{};
+        var X = new int []{2, 1, 0};
+        var Y = new int []{0, 0, 0};
+        int[] result = _task.solution(X, Y);
+        Assert.That(result, Is.EqualTo(expected));
+    
+    }
+
+    [Test(Description = "GivenSimpleLineTriangle_ExpectResultAsEmptyArray")]
+    public void GivenSimpleTriangleWithPointInside_ExpectResultAsEmptyArray()
+    {
+        var expected = new int []{2,1,0};
+        var X = new int []{2, 1, 0, 2};
+        var Y = new int []{0, 1, 0, 2};
+        int[] result = _task.solution(X, Y);
+        Assert.That(result, Is.EqualTo(expected));
+    
+    }
+
+    [Test(Description = "GivenSampleTestData01_ExpectResultTestSolution")]
+    public void GivenSampleTestData01_ExpectResultTestSolution()
+    {
+        var expected = new int []{0,1,4};
+        var X = new int []{0,1,4,3,2,3};
+        var Y = new int []{0,4,3,1,1,2};
+        int[] result = _task.solution(X, Y);
+        Assert.That(result, Is.EqualTo(expected));
+    
+    }
+
+    
+    [Test(Description = "GivenSampleTestData02_ExpectResultTestSolution")]
+    public void GivenSampleTestData02_ExpectResultTestSolution()
+    {
+        var expected = new int []{0,1,3};
+        var X = new int []{0,1,2,4,4,5,6};
+        var Y = new int []{0,1,2,3,4,5,6};
+        int[] result = _task.solution(X, Y);
+        Assert.That(result, Is.EqualTo(expected));
+    
+    }
+
+    
 
 }
